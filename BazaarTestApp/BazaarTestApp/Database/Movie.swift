@@ -23,7 +23,7 @@ class Movie : NSObject, NSCoding{
     
     static let ID = Expression<Int64>("id")
     static let TITLE = Expression<String>("title")
-    static let POSTER_PATCH = Expression<String>("poster_path")
+    static let POSTER_PATCH = Expression<String>("poster_patch")
     static let RELEASE_DATE = Expression<String>("release_date")
     static let OVERVIEW = Expression<String>("overview")
     
@@ -32,10 +32,10 @@ class Movie : NSObject, NSCoding{
     }
     required init?(coder aDecoder: NSCoder) {
         self.id = aDecoder.decodeInteger(forKey: "id")
-        self.title = aDecoder.decodeInteger(forKey: "title")
-        self.posterPatch = aDecoder.decodeInteger(forKey: "posterPatch")
-        self.releaseDate = aDecoder.decodeInteger(forKey: "releaseDate")
-        self.overview = aDecoder.decodeInteger(forKey: "overview")
+        self.title = aDecoder.decodeObject(forKey: "title") as! String
+        self.posterPatch = aDecoder.decodeObject(forKey: "posterPatch") as! String
+        self.releaseDate = aDecoder.decodeObject(forKey: "releaseDate") as! String
+        self.overview = aDecoder.decodeObject(forKey: "overview") as! String
     }
     func encode(with aCoder: NSCoder) {
         aCoder.encode(self.id, forKey: "id")
@@ -54,18 +54,21 @@ class Movie : NSObject, NSCoding{
         movie.overview = String(row[OVERVIEW])
         return movie
     }
-    class func buildDatabaseList(list: AnySequence<Row>) -> [Inbox] {
+    class func buildDatabaseList(list: AnySequence<Row>) -> [Movie] {
         var lstMovie = [Movie]()
         for data in list {
-            lstMovie.append(buildDatabaseRow(row: data))
+            lstMovie.append(buildDataBaseRow(row: data))
         }
         return lstMovie
     }
     class func buildSingle(data : JSON) -> Movie {
         let movie = Movie()
-        movie.id = data["id"].stringValue
+        movie.id = data["id"].intValue
         movie.overview = data["overview"].stringValue
-        movie.posterPatch 
+        movie.posterPatch = data["poster_patch"].stringValue
+        movie.releaseDate = data["release_date"].stringValue
+        movie.title = data["title"].stringValue
+        return movie
         
     }
 }
