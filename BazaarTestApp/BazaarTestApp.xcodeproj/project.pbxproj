@@ -19,6 +19,8 @@
 		5787009A20F23F8100F4E5C3 /* IRAN Sans Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5787009520F23F8000F4E5C3 /* IRAN Sans Light.ttf */; };
 		5787009B20F23F8100F4E5C3 /* IRAN Sans Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5787009620F23F8000F4E5C3 /* IRAN Sans Medium.ttf */; };
 		5787009C20F23F8100F4E5C3 /* IRAN Sans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5787009720F23F8000F4E5C3 /* IRAN Sans.ttf */; };
+		5787009F20F553F800F4E5C3 /* MovieDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5787009E20F553F800F4E5C3 /* MovieDetailTableViewCell.swift */; };
+		578700A120F5577800F4E5C3 /* MovieDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578700A020F5577800F4E5C3 /* MovieDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		5787009520F23F8000F4E5C3 /* IRAN Sans Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IRAN Sans Light.ttf"; sourceTree = "<group>"; };
 		5787009620F23F8000F4E5C3 /* IRAN Sans Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IRAN Sans Medium.ttf"; sourceTree = "<group>"; };
 		5787009720F23F8000F4E5C3 /* IRAN Sans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IRAN Sans.ttf"; sourceTree = "<group>"; };
+		5787009E20F553F800F4E5C3 /* MovieDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailTableViewCell.swift; sourceTree = "<group>"; };
+		578700A020F5577800F4E5C3 /* MovieDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 		5787006E20F23E9300F4E5C3 /* BazaarTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				5787009D20F553A900F4E5C3 /* cell */,
 				5787006F20F23E9300F4E5C3 /* AppDelegate.swift */,
 				5787007120F23E9300F4E5C3 /* MainViewController.swift */,
 				5787007320F23E9400F4E5C3 /* Main.storyboard */,
@@ -97,6 +102,7 @@
 				5787007B20F23E9A00F4E5C3 /* LaunchScreen.storyboard */,
 				5787007E20F23E9A00F4E5C3 /* Info.plist */,
 				5787007620F23E9400F4E5C3 /* BazaarTestApp.xcdatamodeld */,
+				578700A020F5577800F4E5C3 /* MovieDetailTableViewController.swift */,
 			);
 			path = BazaarTestApp;
 			sourceTree = "<group>";
@@ -120,6 +126,14 @@
 				5787009720F23F8000F4E5C3 /* IRAN Sans.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5787009D20F553A900F4E5C3 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				5787009E20F553F800F4E5C3 /* MovieDetailTableViewCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +244,9 @@
 			files = (
 				5787007220F23E9300F4E5C3 /* MainViewController.swift in Sources */,
 				5787007820F23E9400F4E5C3 /* BazaarTestApp.xcdatamodeld in Sources */,
+				578700A120F5577800F4E5C3 /* MovieDetailTableViewController.swift in Sources */,
 				5787007020F23E9300F4E5C3 /* AppDelegate.swift in Sources */,
+				5787009F20F553F800F4E5C3 /* MovieDetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
