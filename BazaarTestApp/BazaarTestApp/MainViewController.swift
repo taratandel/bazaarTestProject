@@ -16,13 +16,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var lstParams = [String : AnyObject]()
-        lstParams["page"] = 1 as AnyObject
-        lstParams["query"] = "batman" as AnyObject
-        ApiHelper.sharedApi.sendGetRequest(urlString: ValueKeeper.SEARCH_MOVIE, lstParams: lstParams){
-            reponse, status in
-            print(reponse)
-        }
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 

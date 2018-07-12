@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import SWXMLHash
+import SwiftyXMLParser
 /** This class handle all the requests and their answers
  ##Important Note##
  we use **singleton** pattern in most of our classes including this one to ensure that the highly usable class wont get renewed many times
@@ -24,20 +24,27 @@ class ApiHelper: NSObject {
     }()
     /// this function send a *get* request using *Alamofire* and parses the answer no matter it is JSON or XML
     func sendGetRequest(urlString: String, lstParams:
-        [String: AnyObject], onCompletion: @escaping(JSON, Bool) -> Void) {
-        var parameters = AppUtils.getAPIKeyParam()
-        for value in lstParams
-        {
-            parameters[value.key] = value.value
-        }
+        [String: AnyObject], onCompletion: @escaping([String:AnyObject], Bool) -> Void) {
+
         let url = ValueKeeper.BASE_URL + urlString
-        _ = Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseData {
+        _ = Alamofire.request(url, method: .get, parameters: lstParams, encoding: URLEncoding.default, headers: nil).responseData {
             response in
             switch response.result{
             case .success(let value):
-                if let jsonRes : JSON = value as? JSON{
-                    print("json found")
-                    self.checkStatus(json: jsonRes, onCompletion: onCompletion)
+                
+                guard let json = try? JSON(data: value) else {
+                    break
+                }
+                if json.type == SwiftyJSON.Type.dictionary {
+                    self.checkStatus(json: json, onCompletion: onCompletion)
+                }
+                
+                else if json.type == SwiftyJSON.Type.string {
+                    let xml = try! XML.parse(value)
+                    self.checkXMLStatus(xml: xml, onCompletion: onCompletion)
+                }
+                else {
+//                    onCompletion
                 }
             case .failure(let error):
                 print(error)
@@ -47,18 +54,21 @@ class ApiHelper: NSObject {
     }
     
     /**
- This function check the status of the answer provided
-     - Parameter json: The first part of the full name.
+     This function check the status of the answer provided
+     - Parameter json: Json Data Provided .
      - Parameter onCompletion: a status which is Boolian and the parsed data whether it is an error or not.
- */
+     */
     
-    func checkStatus(json: JSON, onCompletion: (JSON, Bool) -> Void) {
-        let status = json["results"].string
+    func checkStatus(json: JSON, onCompletion: ([String:AnyObject], Bool) -> Void) {
+        let status = json["results"].dictionary
         if status != nil  {
-            onCompletion(json["results"], true)
-        } else {
-            onCompletion(json["errors"], false)
+            onCompletion(json["results"].dictionary! as [String : AnyObject], true)
+        } else if json["errors"] != JSON.null{
+            onCompletion(["error":json["errors"].array as AnyObject], false)
         }
+    }
+    func checkXMLStatus(xml : XML.Accessor, onCompletion: ([String:AnyObject], Bool)-> Void){
+        
     }
     
 }
