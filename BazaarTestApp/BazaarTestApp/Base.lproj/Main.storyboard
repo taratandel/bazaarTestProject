@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eL7-Vy-Py7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -96,7 +96,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHp-hU-578">
-                                            <rect key="frame" x="16" y="11" width="343" height="20.5"/>
+                                            <rect key="frame" x="16" y="11" width="343" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="pUB-0p-kdE"/>
                                             </constraints>
@@ -105,13 +105,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eAb-2E-EMX">
-                                            <rect key="frame" x="49" y="59.5" width="276" height="276"/>
+                                            <rect key="frame" x="49" y="71" width="276" height="276"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="eAb-2E-EMX" secondAttribute="height" id="d38-DW-siN"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzH-5m-z74">
-                                            <rect key="frame" x="50" y="351.5" width="276" height="32"/>
+                                            <rect key="frame" x="50" y="363" width="276" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="NtF-fU-z1O"/>
                                             </constraints>
@@ -120,7 +120,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AjF-LI-KOu">
-                                            <rect key="frame" x="0.0" y="391.5" width="375" height="113"/>
+                                            <rect key="frame" x="0.0" y="403" width="375" height="113"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k9b-jU-kCt">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>

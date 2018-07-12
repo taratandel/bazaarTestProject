@@ -8,24 +8,20 @@
 
 import UIKit
 import SwiftyJSON
-import SQLite
-import CoreData
 
+/// This class holds Movie model which is provided by the API and does the model related functions
 class Movie : NSObject, NSCoding{
     
-    static let tableName = "Movie"
-    
+    /// *id* of the *Movie*
     var id = 0
+    /// *title* of the *Movie*
     var title = ""
+    /// *posterPatch* of the *Movie*
     var posterPatch = ""
+    /// *releaseDate* of the *Movie*
     var releaseDate = ""
+    /// *overview* of the *Movie*
     var overview = ""
-    
-    static let ID = Expression<Int64>("id")
-    static let TITLE = Expression<String>("title")
-    static let POSTER_PATCH = Expression<String>("poster_patch")
-    static let RELEASE_DATE = Expression<String>("release_date")
-    static let OVERVIEW = Expression<String>("overview")
     
     override init() {
         
@@ -45,22 +41,10 @@ class Movie : NSObject, NSCoding{
         aCoder.encode(self.overview, forKey: "overview")
 
     }
-    class func buildDataBaseRow(row : Row) -> Movie {
-        let movie = Movie()
-        movie.id = Int(row[ID])
-        movie.title = String(row[TITLE])
-        movie.posterPatch = String(row[POSTER_PATCH])
-        movie.releaseDate = String(row[RELEASE_DATE])
-        movie.overview = String(row[OVERVIEW])
-        return movie
-    }
-    class func buildDatabaseList(list: AnySequence<Row>) -> [Movie] {
-        var lstMovie = [Movie]()
-        for data in list {
-            lstMovie.append(buildDataBaseRow(row: data))
-        }
-        return lstMovie
-    }
+
+    /**
+     The function takes in a json and gives back a *Movie* model
+     */
     class func buildSingle(data : JSON) -> Movie {
         let movie = Movie()
         movie.id = data["id"].intValue
@@ -69,6 +53,17 @@ class Movie : NSObject, NSCoding{
         movie.releaseDate = data["release_date"].stringValue
         movie.title = data["title"].stringValue
         return movie
+        
+    }
+    
+    /// this function buld a list of *Movie*
+    
+    class func buildList(data : JSON) -> [Movie]{
+        var movies = [Movie]()
+        for index in 0..<data.count{
+            movies.append(Movie.buildSingle(data: data[index]))
+        }
+        return movies
         
     }
 }
