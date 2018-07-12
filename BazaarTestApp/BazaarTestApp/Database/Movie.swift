@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import SwiftyXMLParser
 
 /// This class holds Movie model which is provided by the API and does the model related functions
 class Movie : NSObject, NSCoding{
@@ -43,21 +44,20 @@ class Movie : NSObject, NSCoding{
     }
 
     /**
-     The function takes in a json and gives back a *Movie* model
+     The function takes in a **JSON** and gives back a *Movie* model
      */
     class func buildSingle(data : JSON) -> Movie {
         let movie = Movie()
         movie.id = data["id"].intValue
         movie.overview = data["overview"].stringValue
-        movie.posterPatch = data["poster_patch"].stringValue
+        movie.posterPatch = data["poster_path"].stringValue
         movie.releaseDate = data["release_date"].stringValue
         movie.title = data["title"].stringValue
         return movie
         
     }
     
-    /// this function buld a list of *Movie*
-    
+    /// this function buld a list of *Movie* with **JSON**
     class func buildList(data : JSON) -> [Movie]{
         var movies = [Movie]()
         for index in 0..<data.count{
@@ -66,4 +66,23 @@ class Movie : NSObject, NSCoding{
         return movies
         
     }
+   
+    /**
+     The function takes in a **XML** and gives back a *Movie* model
+     */
+    class func buildXMLSingle(data : XML.Accessor) -> Movie {
+        let movie = Movie()
+        
+        return movie
+        
+    }
+    
+    /// this function buld a list of *Movie* with **XML** data
+    class func buildXMLList(data : JSON) -> [Movie]{
+        let movies = [Movie]()
+
+        return movies
+        
+    }
+    
 }

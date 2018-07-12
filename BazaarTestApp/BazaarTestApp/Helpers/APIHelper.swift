@@ -32,22 +32,19 @@ class ApiHelper: NSObject {
             switch response.result{
             case .success(let value):
                 
-                guard let json = try? JSON(data: value) else {
-                    break
+                if let json = try? JSON(data: value)  {
+                    if json.type == SwiftyJSON.Type.dictionary {
+                        self.checkStatus(json: json, onCompletion: onCompletion)
+                    }
+    
                 }
-                if json.type == SwiftyJSON.Type.dictionary {
-                    self.checkStatus(json: json, onCompletion: onCompletion)
-                }
-                
-                else if json.type == SwiftyJSON.Type.string {
-                    let xml = try! XML.parse(value)
-                    self.checkXMLStatus(xml: xml, onCompletion: onCompletion)
-                }
+               
                 else {
-//                    onCompletion
+                     let xml = XML.parse(value)
+                        self.checkXMLStatus(xml: xml, onCompletion: onCompletion)
                 }
             case .failure(let error):
-                print(error)
+                onCompletion(["error":error as AnyObject], false)
             }
         }
         
@@ -60,15 +57,36 @@ class ApiHelper: NSObject {
      */
     
     func checkStatus(json: JSON, onCompletion: ([String:AnyObject], Bool) -> Void) {
-        let status = json["results"].dictionary
-        if status != nil  {
-            onCompletion(json["results"].dictionary! as [String : AnyObject], true)
+        let pageCount = json["total_pages"].int
+        if pageCount != nil {
+            if pageCount! > 0{
+            onCompletion(json.dictionary! as [String : AnyObject], true)
+            }
+            else {
+                onCompletion(["error":"query wrong" as AnyObject], false)
+            }
         } else if json["errors"] != JSON.null{
             onCompletion(["error":json["errors"].array as AnyObject], false)
         }
+        else {
+            
+        }
     }
+    
+    /**
+     This function checkes the status of the XML response if we have an HTML Tag its and error other wise base on the answer we act
+     */
     func checkXMLStatus(xml : XML.Accessor, onCompletion: ([String:AnyObject], Bool)-> Void){
         
+        if xml["HTML"].error == nil {
+            onCompletion(["error" : "Must use Anti Filter" as AnyObject] ,false)
+        }
+        else {
+            // base on the answer of the API we act to decide whether the answer is correct or not
+        }
+        
+        
     }
+    
     
 }
