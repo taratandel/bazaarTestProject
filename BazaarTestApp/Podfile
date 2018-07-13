@@ -9,6 +9,7 @@ target 'BazaarTestApp' do
   pod 'SwiftyJSON'
   pod 'SwiftyXMLParser'
   pod 'NVActivityIndicatorView'
+  pod 'PINRemoteImage'
 
   target 'BazaarTestAppTests' do
     inherit! :search_paths

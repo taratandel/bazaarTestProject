@@ -1,8 +1,17 @@
 PODS:
   - Alamofire (4.6.0)
+  - FLAnimatedImage (1.0.12)
   - NVActivityIndicatorView (4.1.0):
     - NVActivityIndicatorView/Presenter (= 4.1.0)
   - NVActivityIndicatorView/Presenter (4.1.0)
+  - PINCache (2.3)
+  - PINRemoteImage (2.1.4):
+    - PINRemoteImage/FLAnimatedImage (= 2.1.4)
+  - PINRemoteImage/Core (2.1.4):
+    - PINCache (>= 2.1)
+  - PINRemoteImage/FLAnimatedImage (2.1.4):
+    - FLAnimatedImage (>= 1.0)
+    - PINRemoteImage/Core
   - SQLCipher (3.4.1):
     - SQLCipher/standard (= 3.4.1)
   - SQLCipher/common (3.4.1)
@@ -16,6 +25,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - NVActivityIndicatorView
+  - PINRemoteImage
   - SQLite.swift/SQLCipher (~> 0.11.2)
   - SwiftyJSON
   - SwiftyXMLParser
@@ -23,7 +33,10 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - FLAnimatedImage
     - NVActivityIndicatorView
+    - PINCache
+    - PINRemoteImage
     - SQLCipher
     - SQLite.swift
     - SwiftyJSON
@@ -31,12 +44,15 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   NVActivityIndicatorView: dc4726052dc24e89fa8576d43acf9e96f61d49db
+  PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
+  PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
   SQLCipher: 43d12c0eb9c57fb438749618fc3ce0065509a559
   SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyXMLParser: 8065da2e715e86aeba677a34fad8c252db5128bb
 
-PODFILE CHECKSUM: fbdcdd55ee3b054e6615a56bc4014403c3f84e23
+PODFILE CHECKSUM: d457e9bca291a6ee570c49ae0360455715c5bcef
 
 COCOAPODS: 1.5.3
