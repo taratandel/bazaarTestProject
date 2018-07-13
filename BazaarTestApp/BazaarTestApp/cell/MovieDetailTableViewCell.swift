@@ -9,12 +9,17 @@
 import UIKit
 
 class MovieDetailTableViewCell: UITableViewCell {
-    @IBOutlet weak var titleOfTheMovie: UILabel!
     @IBOutlet weak var poster: UIImageView!
-    @IBOutlet weak var releaseDate: UILabel!
-    
+    @IBOutlet weak var dropDownImg: UIImageView!
+
     @IBOutlet weak var movieOverViewDropDown: UIView!
+    
     @IBOutlet weak var movieOverView: UILabel!
+    @IBOutlet weak var releaseDate: UILabel!
+    @IBOutlet weak var titleOfTheMovie: UILabel!
+    
+    @IBOutlet weak var heightOfLabel: NSLayoutConstraint!
+    var isDropedDown = false
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,5 +30,6 @@ class MovieDetailTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    
 }

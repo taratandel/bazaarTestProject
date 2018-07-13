@@ -116,9 +116,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="30E-y4-tyb">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="5"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieTableViewCell" rowHeight="609" id="ZuK-z2-b1N" customClass="MovieDetailTableViewCell" customModule="BazaarTestApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="609"/>
+                                <rect key="frame" x="0.0" y="33" width="375" height="609"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZuK-z2-b1N" id="SNE-WV-3G2">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="608.5"/>
@@ -221,6 +226,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dropDownImg" destination="gWE-M0-JpP" id="gxF-Ps-01T"/>
+                                    <outlet property="heightOfLabel" destination="xJD-A3-f0o" id="cJL-KH-3mh"/>
                                     <outlet property="movieOverView" destination="G8i-dv-imh" id="SGi-wV-fgH"/>
                                     <outlet property="movieOverViewDropDown" destination="k9b-jU-kCt" id="ddK-89-hGp"/>
                                     <outlet property="poster" destination="eAb-2E-EMX" id="oEx-aw-zTR"/>
@@ -234,6 +241,9 @@
                             <outlet property="delegate" destination="bxY-Io-4qS" id="fL1-g2-pNd"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="progressBar" destination="30E-y4-tyb" id="uyH-OR-d5U"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYr-Pe-pKP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

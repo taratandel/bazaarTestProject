@@ -61,3 +61,19 @@ class AppUtils: NSObject {
         return "\(sizeOfImg)"
     }
 }
+
+/// This Class is for getting the device related ratios
+class DeviceHelper : NSObject{
+    
+    /// This function will give us the *width* of a device
+    /// - Return :  a CGfloat which is the width
+    class func getDeviceWidth() -> CGFloat {
+        return UIScreen.main.bounds.size.width
+    }
+    /// This function will give us the *height* of a device
+    /// - Return :  a CGfloat which is the *height*
+    class func getDeviceHeight() -> CGFloat {
+        return UIScreen.main.bounds.size.height
+    }
+
+}

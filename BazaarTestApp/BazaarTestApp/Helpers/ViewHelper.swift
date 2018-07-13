@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import LinearProgressBarMaterial
+
 /// This class handles the view related actions
 class ViewHelper: NSObject {
     
@@ -51,4 +53,13 @@ class func showToastMessage(message: String) {
         })
     })
 }
+    /// This function will create a progress bar using the *LinearProgressBarMaterial*
+    class func createPrimaryLinearProgress(frame: CGRect) -> LinearProgressBar {
+        let progress = LinearProgressBar(frame: frame)
+        progress.progressBarColor = .gray
+        progress.backgroundProgressBarColor = .darkGray
+        progress.startAnimation()
+        progress.heightForLinearBar = 3
+        return progress
+    }
 }
