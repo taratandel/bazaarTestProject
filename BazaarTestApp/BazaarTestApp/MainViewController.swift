@@ -22,7 +22,7 @@ class MainViewController: UIViewController, MovieDelegate {
     var searchItem = Search()
     
     let movieHelper = MovieHelper()
-    var databaseHelper = DatabaseHelper()
+    var databaseManager = DatabaseRepository()
 
     
     override func viewDidLoad() {
@@ -58,7 +58,7 @@ class MainViewController: UIViewController, MovieDelegate {
         activityIndic.stopAnimating()
         self.page = pageNumber
         self.movies = lstMoviev
-        
+        databaseManager.addOrUpdateSearch(searchItem: self.searchItem)
         
         performSegue(withIdentifier: "toTableViewSegue", sender: self)
 

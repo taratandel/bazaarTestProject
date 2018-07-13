@@ -24,7 +24,7 @@
 		5787009F20F553F800F4E5C3 /* MovieDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5787009E20F553F800F4E5C3 /* MovieDetailTableViewCell.swift */; };
 		578700A120F5577800F4E5C3 /* MovieDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578700A020F5577800F4E5C3 /* MovieDetailTableViewController.swift */; };
 		578700A420F5EDF100F4E5C3 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578700A320F5EDF100F4E5C3 /* Movie.swift */; };
-		578700A920F68CC800F4E5C3 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578700A820F68CC800F4E5C3 /* DatabaseManager.swift */; };
+		578700A920F68CC800F4E5C3 /* DatabaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578700A820F68CC800F4E5C3 /* DatabaseRepository.swift */; };
 		578700AB20F68D0700F4E5C3 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578700AA20F68D0700F4E5C3 /* DatabaseHelper.swift */; };
 		578700AD20F6977400F4E5C3 /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578700AC20F6977400F4E5C3 /* AppUtils.swift */; };
 		578700AF20F69B8700F4E5C3 /* ValueKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578700AE20F69B8700F4E5C3 /* ValueKeeper.swift */; };
@@ -67,7 +67,7 @@
 		5787009E20F553F800F4E5C3 /* MovieDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailTableViewCell.swift; sourceTree = "<group>"; };
 		578700A020F5577800F4E5C3 /* MovieDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailTableViewController.swift; sourceTree = "<group>"; };
 		578700A320F5EDF100F4E5C3 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		578700A820F68CC800F4E5C3 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		578700A820F68CC800F4E5C3 /* DatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepository.swift; sourceTree = "<group>"; };
 		578700AA20F68D0700F4E5C3 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		578700AC20F6977400F4E5C3 /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		578700AE20F69B8700F4E5C3 /* ValueKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueKeeper.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 		578700A720F68C6200F4E5C3 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				578700A820F68CC800F4E5C3 /* DatabaseManager.swift */,
+				578700A820F68CC800F4E5C3 /* DatabaseRepository.swift */,
 				578700AC20F6977400F4E5C3 /* AppUtils.swift */,
 				578700AE20F69B8700F4E5C3 /* ValueKeeper.swift */,
 			);
@@ -408,7 +408,7 @@
 				578700AB20F68D0700F4E5C3 /* DatabaseHelper.swift in Sources */,
 				5787007020F23E9300F4E5C3 /* AppDelegate.swift in Sources */,
 				5787009F20F553F800F4E5C3 /* MovieDetailTableViewCell.swift in Sources */,
-				578700A920F68CC800F4E5C3 /* DatabaseManager.swift in Sources */,
+				578700A920F68CC800F4E5C3 /* DatabaseRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
