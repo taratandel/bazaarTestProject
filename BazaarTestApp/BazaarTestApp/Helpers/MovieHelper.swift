@@ -21,6 +21,7 @@ class MovieHelper: NSObject {
     
     var delegate: MovieDelegate!
     
+    
     /// This function has 2 parameter, it will request using these parameters and pass the data to a protocol method.
     /// - parameter page: Int value specifying the page number
     /// - parameter query: String which the user is searching for

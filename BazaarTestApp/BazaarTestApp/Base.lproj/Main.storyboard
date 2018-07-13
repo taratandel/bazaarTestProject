@@ -31,45 +31,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لطفا نام فیلم مورد نظر را تایپ کنید" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrv-Yh-wo4">
-                                <rect key="frame" x="16" y="153" width="343" height="75"/>
-                                <fontDescription key="fontDescription" name="IRANSans-Bold" family="IRANSans" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ogu-0O-WYi">
-                                <rect key="frame" x="16" y="318" width="343" height="30"/>
+                                <rect key="frame" x="16" y="260" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="GZ2-ML-7Yb"/>
+                                    <constraint firstAttribute="height" constant="50" id="LDN-Sm-l3s"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xl0-ja-23v">
-                                <rect key="frame" x="90" y="393" width="209" height="53"/>
+                                <rect key="frame" x="132.5" y="345" width="110" height="41"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="ayN-04-98P"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="IRANSans-Light" family="IRANSans" pointSize="17"/>
                                 <state key="normal" title="جستجوی فیلم">
                                     <color key="titleColor" red="0.28235294119999998" green="0.35294117650000001" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tn6-KZ-Cj6" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="142.5" y="340.5" width="90" height="50"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4aa-p3-4N2"/>
+                                    <constraint firstAttribute="width" constant="90" id="pah-XR-moY"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.54901960780000003" green="0.54901960780000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="ballPulseSync"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لطفا نام فیلم مورد نظر را تایپ کنید" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrv-Yh-wo4">
+                                <rect key="frame" x="16" y="185" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Vlq-EW-3YW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IRANSans-Bold" family="IRANSans" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mrv-Yh-wo4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="QCR-RK-FzW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xl0-ja-23v" secondAttribute="trailing" constant="76" id="SDO-eV-Git"/>
-                            <constraint firstItem="xl0-ja-23v" firstAttribute="top" secondItem="ogu-0O-WYi" secondAttribute="bottom" constant="45" id="XQT-az-aWG"/>
-                            <constraint firstItem="ogu-0O-WYi" firstAttribute="trailing" secondItem="mrv-Yh-wo4" secondAttribute="trailing" id="aXL-xl-vkR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mrv-Yh-wo4" secondAttribute="bottom" constant="439" id="fLL-ye-2mp"/>
-                            <constraint firstItem="mrv-Yh-wo4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="89" id="mh7-g9-Dim"/>
-                            <constraint firstItem="xl0-ja-23v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="o7G-Pk-SAJ"/>
-                            <constraint firstItem="ogu-0O-WYi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rdo-0v-BCf"/>
-                            <constraint firstItem="ogu-0O-WYi" firstAttribute="leading" secondItem="mrv-Yh-wo4" secondAttribute="leading" id="ueR-lG-tuB"/>
-                            <constraint firstItem="mrv-Yh-wo4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ukE-cH-zPT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xl0-ja-23v" secondAttribute="bottom" constant="221" id="xAP-6k-tq6"/>
+                            <constraint firstItem="xl0-ja-23v" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1Kb-Wm-ha4"/>
+                            <constraint firstItem="xl0-ja-23v" firstAttribute="top" secondItem="ogu-0O-WYi" secondAttribute="bottom" constant="35" id="A1a-jg-Qgu"/>
+                            <constraint firstItem="xl0-ja-23v" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="M5F-Ko-lpO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mrv-Yh-wo4" secondAttribute="trailing" constant="16" id="TUv-lJ-gIS"/>
+                            <constraint firstItem="Tn6-KZ-Cj6" firstAttribute="centerX" secondItem="xl0-ja-23v" secondAttribute="centerX" id="Tis-PY-YP9"/>
+                            <constraint firstItem="ogu-0O-WYi" firstAttribute="top" secondItem="mrv-Yh-wo4" secondAttribute="bottom" constant="35" id="Xzm-vP-2ye"/>
+                            <constraint firstItem="ogu-0O-WYi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cDZ-gg-eQB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ogu-0O-WYi" secondAttribute="trailing" constant="16" id="pRo-nI-JhL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xl0-ja-23v" secondAttribute="trailing" id="t2P-j5-V7p"/>
+                            <constraint firstItem="xl0-ja-23v" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tLW-ox-5cD"/>
+                            <constraint firstItem="mrv-Yh-wo4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wPk-SL-lN7"/>
+                            <constraint firstItem="Tn6-KZ-Cj6" firstAttribute="centerY" secondItem="xl0-ja-23v" secondAttribute="centerY" id="x50-wT-bPJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="w9c-cE-mFz"/>
                     <connections>
+                        <outlet property="activityIndic" destination="Tn6-KZ-Cj6" id="lSh-8U-d5f"/>
                         <outlet property="movieName" destination="ogu-0O-WYi" id="9bC-8u-uqk"/>
                         <outlet property="search" destination="xl0-ja-23v" id="SMA-Bm-H7G"/>
                         <segue destination="bxY-Io-4qS" kind="show" identifier="toTableViewSegue" id="rw7-KU-rL8"/>

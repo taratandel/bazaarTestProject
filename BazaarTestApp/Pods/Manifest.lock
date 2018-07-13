@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.6.0)
+  - NVActivityIndicatorView (4.1.0):
+    - NVActivityIndicatorView/Presenter (= 4.1.0)
+  - NVActivityIndicatorView/Presenter (4.1.0)
   - SQLCipher (3.4.1):
     - SQLCipher/standard (= 3.4.1)
   - SQLCipher/common (3.4.1)
@@ -12,6 +15,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - NVActivityIndicatorView
   - SQLite.swift/SQLCipher (~> 0.11.2)
   - SwiftyJSON
   - SwiftyXMLParser
@@ -19,6 +23,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - NVActivityIndicatorView
     - SQLCipher
     - SQLite.swift
     - SwiftyJSON
@@ -26,11 +31,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  NVActivityIndicatorView: dc4726052dc24e89fa8576d43acf9e96f61d49db
   SQLCipher: 43d12c0eb9c57fb438749618fc3ce0065509a559
   SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyXMLParser: 8065da2e715e86aeba677a34fad8c252db5128bb
 
-PODFILE CHECKSUM: 4eb61a66e3433f5939da29c7840c282d7d759f56
+PODFILE CHECKSUM: fbdcdd55ee3b054e6615a56bc4014403c3f84e23
 
 COCOAPODS: 1.5.3

@@ -62,5 +62,21 @@ class DatabaseRepository: NSObject {
         _ = try! DatabaseHelper.sharedDatabase.database.run(update)
     }
     
+    /// This function checks if the number of stored data exceeded from 10
+    func searchNumber() -> Int {
+        if self.getSearches().count > 10 {
+            
+        }
+    }
+    func deleteSearch(SearchItem: Search) {
+        let Search = Table(Search.TABLE_NAME)
+    }
+    
+    func deleteAllSearch() {
+        let Search = Table(Search.TABLE_NAME)
+        _ = try! DatabaseHelper.sharedDatabase.database.run(Search.delete())
+    }
+
+    
  
 }

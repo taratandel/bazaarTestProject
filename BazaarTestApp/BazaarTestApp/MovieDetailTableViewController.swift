@@ -9,7 +9,10 @@
 import UIKit
 
 class MovieDetailTableViewController: UITableViewController {
-
+/// it holds the number of requsted page
+    var page = 0
+    var movie = [Movie]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

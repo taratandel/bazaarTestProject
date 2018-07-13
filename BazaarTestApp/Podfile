@@ -8,6 +8,7 @@ target 'BazaarTestApp' do
   pod 'SQLite.swift/SQLCipher', '~> 0.11.2'
   pod 'SwiftyJSON'
   pod 'SwiftyXMLParser'
+  pod 'NVActivityIndicatorView'
 
   target 'BazaarTestAppTests' do
     inherit! :search_paths
