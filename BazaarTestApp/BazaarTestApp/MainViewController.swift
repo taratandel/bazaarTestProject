@@ -43,7 +43,7 @@ class MainViewController: UIViewController, MovieDelegate {
             movieHelper.getMovies(page: 1, query: query)
         }
         else {
-            ViewHelper.showToastMessage(message: "لطفا نام فیلم مورد نظر خود را وارد کنید")
+            ViewHelper.showToastMessage(message: "Please enter a movie name")
         }
     }
     
@@ -67,7 +67,7 @@ class MainViewController: UIViewController, MovieDelegate {
         performSegue(withIdentifier: "toTableViewSegue", sender: self)
         }
         else {
-            ViewHelper.showToastMessage(message: "نام فیلم وجود ندارد دوباره تلاش کنید.")
+            ViewHelper.showToastMessage(message: "no such name exists")
         }
 
     }

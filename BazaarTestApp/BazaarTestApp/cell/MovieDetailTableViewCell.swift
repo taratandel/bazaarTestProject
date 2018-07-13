@@ -18,8 +18,6 @@ class MovieDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var titleOfTheMovie: UILabel!
     
-    @IBOutlet weak var heightOfLabel: NSLayoutConstraint!
-    var isDropedDown = false
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

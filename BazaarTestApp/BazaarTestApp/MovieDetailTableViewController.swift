@@ -58,11 +58,11 @@ class MovieDetailTableViewController: UITableViewController, MovieDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieTableViewCell", for: indexPath) as! MovieDetailTableViewCell
         let currentMovie = movie[indexPath.row]
-        cell.releaseDate.text = currentMovie.releaseDate
+        cell.releaseDate.text = "Release Date: \n" + currentMovie.releaseDate
         cell.titleOfTheMovie.text = currentMovie.title
         cell.poster.pin_setImage(from: URL(string: (ValueKeeper.LOAD_PIC + currentMovie.posterPatch))!)
+//        cell.heightOfLabel.constant = AppUtils.heightForView(text: currentMovie.overview, width: cell.movieOverView.frame.size.width)
         cell.movieOverView.text = currentMovie.overview
-        cell.dropDownImg.image = #imageLiteral(resourceName: "downArrow")
         if indexPath.row == self.movie.count - 1 {
             if currentPage < page - 1 {
                     self.progress.isHidden = false
@@ -70,14 +70,17 @@ class MovieDetailTableViewController: UITableViewController, MovieDelegate {
             
             }
         }
+        if indexPath.row == 0 {
+            self.tableView.reloadRows(at: [indexPath], with: .none)
+        }
         // Configure the cell...
 
         return cell
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return UITableViewAutomaticDimension
-    }
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//
+//        return UITableViewAutomaticDimension
+//    }
     func getMovieSuccessfuly(lstMoviev: [Movie], pageNumber: Int) {
         progressBar.isHidden = true
         self.currentPage += 1
@@ -90,14 +93,23 @@ class MovieDetailTableViewController: UITableViewController, MovieDelegate {
     
     func failedToGetMovie(error: String) {
         progressBar.isHidden = true
-        ViewHelper.showToastMessage(message: "در حال تلاش دوباره")
+        ViewHelper.showToastMessage(message: "Trying Again")
         movieHelper.getMovies(page: self.currentPage, query: self.query)
 
     }
+    
+    /// initialize the table view subViews
     func intiView(){
+
         progressBar.isHidden = true
         self.progress = ViewHelper.createPrimaryLinearProgress(frame: CGRect(x: 0, y: 0, width: DeviceHelper.getDeviceWidth(), height: 3))
         self.progressBar.addSubview(self.progress)
+        tableView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44
+        
+        tableView.reloadData()
 
     }
 
