@@ -15,19 +15,19 @@ class Search: NSObject {
     /// Name of the table to store in the database
     static let TABLE_NAME = "Search"
     /// "id" of the searched term which increment one by one
-    var id = 0
+//    var id = 0
     /// the searched term
     var title = ""
     
     /// *ID* Expression to use with *SQLite* Library
-    static let ID = Expression<Int64>("id")
+//    static let ID = Expression<Int64>("id")
     /// *TITLE* Expression to use with *SQLite* Library
     static let TITLE = Expression<String>("title")
     
     /// This function builds a row in the database and returns a *Search* model
     class func buildDataBaseRow(row : Row) -> Search {
         let search = Search()
-        search.id = Int(row[ID])
+//        search.id = Int(row[ID])
         search.title = String(row[TITLE])
 
         return search

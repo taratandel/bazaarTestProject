@@ -34,7 +34,7 @@ class MovieHelper: NSObject {
             response, status in
             if status {
                 var lstMovies = [Movie]()
-                let page = response["total_pages"] as! Int
+                let page = JSON(response["total_pages"]!).intValue
                 lstMovies = (Movie.buildList(data: JSON(response["results"]! )))
                 
                 if self.delegate.responds(to: #selector(MovieDelegate.getMovieSuccessfuly(lstMoviev: pageNumber:))) {

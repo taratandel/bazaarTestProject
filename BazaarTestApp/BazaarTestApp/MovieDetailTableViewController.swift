@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import PINRemoteImage
+import LinearProgressBarMaterial
 
-class MovieDetailTableViewController: UITableViewController {
+
+class MovieDetailTableViewController: UITableViewController, MovieDelegate {
 /// it holds the number of requsted page
     var page = 0
+    var currentPage = 0
     var movie = [Movie]()
+    var query = ""
+    
+    let movieHelper = MovieHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        movieHelper.delegate = self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -46,11 +54,29 @@ class MovieDetailTableViewController: UITableViewController {
         let currentMovie = movie[indexPath.row]
         cell.releaseDate.text = currentMovie.releaseDate
         cell.titleOfTheMovie.text = currentMovie.title
+        cell.poster.pin_setImage(from: URL(string: (ValueKeeper.LOAD_PIC + currentMovie.posterPatch))!)
         
-
+        if indexPath.row == self.movie.count - 1 {
+            self.currentPage += 1
+            if currentPage < page {
+                movieHelper.getMovies(page: self.currentPage, query: self.query)
+            }
+        }
         // Configure the cell...
 
         return cell
+    }
+    func getMovieSuccessfuly(lstMoviev: [Movie], pageNumber: Int) {
+        for movie in lstMoviev{
+            self.movie.append(movie)
+        }
+        self.tableView.reloadData()
+    }
+    
+    func failedToGetMovie(error: String) {
+        ViewHelper.showToastMessage(message: "در حال تلاش دوباره")
+        movieHelper.getMovies(page: self.currentPage, query: self.query)
+
     }
  
 

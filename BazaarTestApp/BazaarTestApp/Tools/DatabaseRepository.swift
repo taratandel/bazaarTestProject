@@ -28,8 +28,8 @@ class DatabaseRepository: NSObject {
         let search = Table(Search.TABLE_NAME)
         do {
             try DatabaseHelper.sharedDatabase.database.run(search.create {t in
-                t.column(Search.ID, primaryKey: .autoincrement)
-                t.column(Search.TITLE)
+//                t.column(Search.ID,  .autoin/crement)
+                t.column(Search.TITLE, primaryKey: true)
 
             })
         } catch  {
@@ -42,8 +42,7 @@ class DatabaseRepository: NSObject {
     func getSearches() -> [Search] {
         let search = Table(Search.TABLE_NAME)
         var lstSearches = [Search]()
-        let query = search.filter(Search.ID > 0)
-        let result = try! DatabaseHelper.sharedDatabase.database.prepare(query)
+        let result = try! DatabaseHelper.sharedDatabase.database.prepare(search)
         lstSearches.append(contentsOf: Search.buildDatabaseList(list: result))
         return lstSearches
     }
@@ -51,14 +50,14 @@ class DatabaseRepository: NSObject {
     /// This function *add* entries in to the table
     func addSearch(searchItem: Search) {
         let search = Table(Search.TABLE_NAME)
-        let insert = search.insert(or: .replace, Search.ID <- Int64(searchItem.id), Search.TITLE <- searchItem.title )
+        let insert = search.insert(or: .replace, /*Search.ID <- Int64(searchItem.id),*/ Search.TITLE <- searchItem.title )
         _ = try! DatabaseHelper.sharedDatabase.database.run(insert)
     }
     
     /// This function *edit* the given **Search** item
     func editSearch(searchItem: Search) {
         let search = Table(Search.TABLE_NAME)
-        let update = search.update(Search.ID <- Int64(searchItem.id), Search.TITLE <- searchItem.title)
+        let update = search.update(/*Search.ID <- Int64(searchItem.id),*/ Search.TITLE <- searchItem.title)
         _ = try! DatabaseHelper.sharedDatabase.database.run(update)
     }
     
@@ -72,14 +71,16 @@ class DatabaseRepository: NSObject {
             self.addSearch(searchItem: searchItem)
         }
     }
+    
+    /// This Fuction deletes an specified search Item
     func deleteSearch(searchItem: Search) {
         let search = Table(Search.TABLE_NAME)
-        let searchItem = search.filter(Search.ID == Int64(searchItem.id))
+        let searchItem = search.filter(Search.TITLE == searchItem.title)
         if searchItem != nil {
             _ = try! DatabaseHelper.sharedDatabase.database.run(searchItem.delete())
         }
     }
-    
+    /// This functoin deletes All the database Fields
     func deleteAllSearch() {
         let search = Table(Search.TABLE_NAME)
         _ = try! DatabaseHelper.sharedDatabase.database.run(search.delete())

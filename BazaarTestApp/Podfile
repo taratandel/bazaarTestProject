@@ -10,6 +10,7 @@ target 'BazaarTestApp' do
   pod 'SwiftyXMLParser'
   pod 'NVActivityIndicatorView'
   pod 'PINRemoteImage'
+  pod 'LinearProgressBarMaterial'
 
   target 'BazaarTestAppTests' do
     inherit! :search_paths

@@ -52,15 +52,23 @@ class MainViewController: UIViewController, MovieDelegate {
     func initView(){
         activityIndic.isHidden = true
         self.search.addTarget(self, action: #selector(self.searchMovie), for: .touchUpInside)
+        self.movieHelper.delegate = self
     }
     
     func getMovieSuccessfuly(lstMoviev: [Movie], pageNumber: Int) {
         activityIndic.stopAnimating()
+        if lstMoviev.count > 0 {
+            
+       
         self.page = pageNumber
         self.movies = lstMoviev
         databaseManager.addOrUpdateSearch(searchItem: self.searchItem)
         
         performSegue(withIdentifier: "toTableViewSegue", sender: self)
+        }
+        else {
+            ViewHelper.showToastMessage(message: "نام فیلم وجود ندارد دوباره تلاش کنید.")
+        }
 
     }
     
@@ -70,10 +78,11 @@ class MainViewController: UIViewController, MovieDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "performSegue"{
+        if segue.identifier == "toTableViewSegue"{
             let destVC = segue.destination as! MovieDetailTableViewController
             destVC.page = self.page
             destVC.movie = self.movies
+            destVC.query = self.searchItem.title
             
         }
     }

@@ -19,4 +19,7 @@ class ValueKeeper: NSObject {
     /// API SEARCH MOVIE
     static let SEARCH_MOVIE = "/search/movie"
     
+    /// API Load Pic
+    static let LOAD_PIC = "http://image.tmdb.org/t/p/w92"
+    
 }
