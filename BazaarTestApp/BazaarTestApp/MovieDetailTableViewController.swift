@@ -19,11 +19,9 @@ class MovieDetailTableViewController: UITableViewController, MovieDelegate {
     var movie = [Movie]()
     var query = ""
     
-    var progress: LinearProgressBar!
 
     let movieHelper = MovieHelper()
     
-    @IBOutlet weak var progressBar: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +63,6 @@ class MovieDetailTableViewController: UITableViewController, MovieDelegate {
         cell.movieOverView.text = currentMovie.overview
         if indexPath.row == self.movie.count - 1 {
             if currentPage < page - 1 {
-                    self.progress.isHidden = false
                 movieHelper.getMovies(page: self.currentPage, query: self.query)
             
             }
@@ -82,7 +79,6 @@ class MovieDetailTableViewController: UITableViewController, MovieDelegate {
 //        return UITableViewAutomaticDimension
 //    }
     func getMovieSuccessfuly(lstMoviev: [Movie], pageNumber: Int) {
-        progressBar.isHidden = true
         self.currentPage += 1
 
         for movie in lstMoviev{
@@ -92,7 +88,6 @@ class MovieDetailTableViewController: UITableViewController, MovieDelegate {
     }
     
     func failedToGetMovie(error: String) {
-        progressBar.isHidden = true
         ViewHelper.showToastMessage(message: "Trying Again")
         movieHelper.getMovies(page: self.currentPage, query: self.query)
 
@@ -101,9 +96,7 @@ class MovieDetailTableViewController: UITableViewController, MovieDelegate {
     /// initialize the table view subViews
     func intiView(){
 
-        progressBar.isHidden = true
-        self.progress = ViewHelper.createPrimaryLinearProgress(frame: CGRect(x: 0, y: 0, width: DeviceHelper.getDeviceWidth(), height: 3))
-        self.progressBar.addSubview(self.progress)
+
         tableView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
         
         tableView.rowHeight = UITableViewAutomaticDimension
