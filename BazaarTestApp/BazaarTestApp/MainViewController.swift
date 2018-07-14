@@ -11,12 +11,16 @@ import NVActivityIndicatorView
 
 class MainViewController: UIViewController, MovieDelegate {
 
+
     @IBOutlet weak var movieName: UITextField!
     
     @IBOutlet weak var search: UIButton!
     
     @IBOutlet weak var activityIndic: NVActivityIndicatorView!
     
+    @IBOutlet weak var suggestionView: UIView!
+    
+    @IBOutlet weak var seggestionTableView: UITableView!
     var page = 0
     var movies = [Movie]()
     var searchItem = Search()
@@ -50,6 +54,10 @@ class MainViewController: UIViewController, MovieDelegate {
     
     /// Initialize The view 
     func initView(){
+        self.suggestionView.isHidden
+         = true
+        self.seggestionTableView.delegate = self
+        self.seggestionTableView.dataSource = self
         activityIndic.isHidden = true
         self.search.addTarget(self, action: #selector(self.searchMovie), for: .touchUpInside)
         self.movieHelper.delegate = self
@@ -86,6 +94,8 @@ class MainViewController: UIViewController, MovieDelegate {
             
         }
     }
-
+    @IBAction func startTyping(_ sender: Any) {
+        suggestionView.isHidden = true
+    }
 }
 

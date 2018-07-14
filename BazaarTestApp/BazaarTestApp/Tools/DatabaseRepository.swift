@@ -68,6 +68,7 @@ class DatabaseRepository: NSObject {
             self.addSearch(searchItem: searchItem)
         }
         else {
+                        self.deleteSearch(searchItem: self.getSearches()[0])
             self.addSearch(searchItem: searchItem)
         }
     }
@@ -76,9 +77,17 @@ class DatabaseRepository: NSObject {
     func deleteSearch(searchItem: Search) {
         let search = Table(Search.TABLE_NAME)
         let searchItem = search.filter(Search.TITLE == searchItem.title)
-        if searchItem != nil {
-            _ = try! DatabaseHelper.sharedDatabase.database.run(searchItem.delete())
+        do {
+            if try DatabaseHelper.sharedDatabase.database.run(searchItem.delete()) > 0 {
+                print("deleted")
+            } else {
+                print("row not found")
+            }
+        } catch {
+            print("delete failed: \(error)")
         }
+
+        
     }
     /// This functoin deletes All the database Fields
     func deleteAllSearch() {
