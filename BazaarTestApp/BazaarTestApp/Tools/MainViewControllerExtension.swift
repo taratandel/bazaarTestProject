@@ -45,7 +45,7 @@ extension MainViewController : UITextFieldDelegate{
         return true
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if movieName.isEditing{
+        if movieName.isEditing && movieName.text?.count == 0{
             self.suggestionView.isHidden = false
             self.seggestionTableView.reloadData()
         }
