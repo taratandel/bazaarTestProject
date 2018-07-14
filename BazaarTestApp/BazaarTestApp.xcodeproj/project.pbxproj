@@ -39,6 +39,7 @@
 		578700AF20F69B8700F4E5C3 /* ValueKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578700AE20F69B8700F4E5C3 /* ValueKeeper.swift */; };
 		578700B120F6A15D00F4E5C3 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578700B020F6A15D00F4E5C3 /* Search.swift */; };
 		578700B320F6A4B100F4E5C3 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578700B220F6A4B100F4E5C3 /* APIHelper.swift */; };
+		57CD007420FAA658001E40BA /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD007320FAA658001E40BA /* CoreDataHelper.swift */; };
 		5E18E6FC031DCE2F9699B45C /* Pods_BazaarTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B2BA7E432E6D39A6FEC012 /* Pods_BazaarTestApp.framework */; };
 		78271F3432F7F95F0EDE5E87 /* Pods_BazaarTestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BAA88BFF41A2C68D1D246A /* Pods_BazaarTestAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -95,6 +96,7 @@
 		578700AE20F69B8700F4E5C3 /* ValueKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueKeeper.swift; sourceTree = "<group>"; };
 		578700B020F6A15D00F4E5C3 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		578700B220F6A4B100F4E5C3 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		57CD007320FAA658001E40BA /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		92DB7B4D469284B4FD8E199E /* Pods-BazaarTestAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BazaarTestAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BazaarTestAppTests/Pods-BazaarTestAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A40203050B095EF0001BAA78 /* Pods-BazaarTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BazaarTestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BazaarTestApp/Pods-BazaarTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E7BAA88BFF41A2C68D1D246A /* Pods_BazaarTestAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BazaarTestAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +220,7 @@
 				578700B220F6A4B100F4E5C3 /* APIHelper.swift */,
 				5765F6E820F7F5910078ED6B /* MovieHelper.swift */,
 				5765F6EA20F8184C0078ED6B /* ViewHelper.swift */,
+				57CD007320FAA658001E40BA /* CoreDataHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				578700B120F6A15D00F4E5C3 /* Search.swift in Sources */,
 				578700AD20F6977400F4E5C3 /* AppUtils.swift in Sources */,
 				5765F6ED20F9E9530078ED6B /* extension.swift in Sources */,
+				57CD007420FAA658001E40BA /* CoreDataHelper.swift in Sources */,
 				5787007220F23E9300F4E5C3 /* MainViewController.swift in Sources */,
 				578700A420F5EDF100F4E5C3 /* Movie.swift in Sources */,
 				578700AF20F69B8700F4E5C3 /* ValueKeeper.swift in Sources */,
@@ -706,6 +710,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KCCZ4PVUZS;
 				INFOPLIST_FILE = BazaarTestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -725,6 +730,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KCCZ4PVUZS;
 				INFOPLIST_FILE = BazaarTestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
