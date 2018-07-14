@@ -95,7 +95,13 @@ class MainViewController: UIViewController, MovieDelegate {
         }
     }
     @IBAction func startTyping(_ sender: Any) {
-        suggestionView.isHidden = true
+        if movieName.text?.count == 0 {
+            suggestionView.isHidden = false
+            self.seggestionTableView.reloadData()
+        }
+        else  {
+            suggestionView.isHidden = true
+        }
     }
 }
 

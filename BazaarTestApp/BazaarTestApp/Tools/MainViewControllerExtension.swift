@@ -10,9 +10,6 @@ import Foundation
 import UIKit
 
 extension MainViewController : UITableViewDelegate, UITableViewDataSource {
-    
-    
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -25,6 +22,11 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
         let searchItem = databaseManager.getSearches()
         cell.textLabel?.text = searchItem[indexPath.row].title
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        movieName.text = databaseManager.getSearches()[indexPath.row].title
+        searchMovie()
+        view.endEditing(true)
     }
 }
 extension MainViewController : UITextFieldDelegate{

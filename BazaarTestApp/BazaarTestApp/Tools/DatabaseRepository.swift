@@ -63,12 +63,12 @@ class DatabaseRepository: NSObject {
     
     /// This function checks if the number of stored data exceeded from 10
     func addOrUpdateSearch(searchItem: Search)  {
-        if self.getSearches().count > 10 {
+        if self.getSearches().count > 9 {
             self.deleteSearch(searchItem: self.getSearches()[0])
             self.addSearch(searchItem: searchItem)
         }
         else {
-                        self.deleteSearch(searchItem: self.getSearches()[0])
+
             self.addSearch(searchItem: searchItem)
         }
     }
