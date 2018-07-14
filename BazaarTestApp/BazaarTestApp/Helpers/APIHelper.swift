@@ -78,11 +78,11 @@ class ApiHelper: NSObject {
      */
     func checkXMLStatus(xml : XML.Accessor, onCompletion: ([String:AnyObject], Bool)-> Void){
         
-        if xml["HTML"].error == nil {
+        if xml["HTML"].error == nil || xml["html"].error == nil{
             onCompletion(["error" : "Must use Anti Filter" as AnyObject] ,false)
         }
         else {
-            // base on the answer of the API we act to decide whether the answer is correct or not
+            onCompletion(["error":"must parse the xml" as AnyObject], false)
         }
         
         
