@@ -8,6 +8,8 @@
 
 import XCTest
 import SwiftyJSON
+import Alamofire
+
 @testable import BazaarTestApp
 
 class BazaarTestAppTests: XCTestCase {
@@ -50,6 +52,32 @@ class BazaarTestAppTests: XCTestCase {
         XCTAssertNil(responseError)
         XCTAssertEqual(statuses, false)
         
+    }
+    func testStatus (){
+        // given
+        var statuses = false
+        var responseError : String?
+        let promise  = expectation(description: "Completion handler invoked")
+
+        if let path = Bundle.main.path(forResource: "movie", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                //when
+                appUnderTest.checkStatus(json: JSON(jsonResult)){
+                    response , status in
+                    responseError = response["error"]?.string
+                    statuses = status
+                    promise.fulfill()
+                }
+            } catch {
+                // handle error
+            }
+        }
+        //then
+        waitForExpectations(timeout: 6, handler: nil)
+        XCTAssertNil(responseError)
+        XCTAssertEqual(statuses, true)
     }
     
     

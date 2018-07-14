@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		571E9DC220FA43CB003BDD28 /* BazaarTestAppAlamofireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571E9DC120FA43CB003BDD28 /* BazaarTestAppAlamofireTests.swift */; };
-		571E9DCA20FA6CFA003BDD28 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = 571E9DC920FA6CF9003BDD28 /* movie.json */; };
-		571E9DCB20FA6CFA003BDD28 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = 571E9DC920FA6CF9003BDD28 /* movie.json */; };
+		571E9DCD20FA8A1F003BDD28 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = 571E9DCC20FA8A1E003BDD28 /* movie.json */; };
+		571E9DCE20FA8A1F003BDD28 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = 571E9DCC20FA8A1E003BDD28 /* movie.json */; };
+		571E9DCF20FA8A1F003BDD28 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = 571E9DCC20FA8A1E003BDD28 /* movie.json */; };
+		571E9DD120FA94DB003BDD28 /* testMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571E9DD020FA94DB003BDD28 /* testMovie.swift */; };
+		571E9DD320FA9C82003BDD28 /* movieCount.json in Resources */ = {isa = PBXBuildFile; fileRef = 571E9DD220FA9C7F003BDD28 /* movieCount.json */; };
+		571E9DD420FA9C82003BDD28 /* movieCount.json in Resources */ = {isa = PBXBuildFile; fileRef = 571E9DD220FA9C7F003BDD28 /* movieCount.json */; };
+		571E9DD520FA9C82003BDD28 /* movieCount.json in Resources */ = {isa = PBXBuildFile; fileRef = 571E9DD220FA9C7F003BDD28 /* movieCount.json */; };
 		5765F6E920F7F5910078ED6B /* MovieHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765F6E820F7F5910078ED6B /* MovieHelper.swift */; };
 		5765F6EB20F8184C0078ED6B /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765F6EA20F8184C0078ED6B /* ViewHelper.swift */; };
 		5765F6ED20F9E9530078ED6B /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765F6EC20F9E9530078ED6B /* extension.swift */; };
@@ -59,9 +63,9 @@
 /* Begin PBXFileReference section */
 		48B2BA7E432E6D39A6FEC012 /* Pods_BazaarTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BazaarTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		571E9DBF20FA43CB003BDD28 /* BazaarTestAppAlamofireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BazaarTestAppAlamofireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		571E9DC120FA43CB003BDD28 /* BazaarTestAppAlamofireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BazaarTestAppAlamofireTests.swift; sourceTree = "<group>"; };
-		571E9DC320FA43CB003BDD28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		571E9DC920FA6CF9003BDD28 /* movie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
+		571E9DCC20FA8A1E003BDD28 /* movie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
+		571E9DD020FA94DB003BDD28 /* testMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testMovie.swift; sourceTree = "<group>"; };
+		571E9DD220FA9C7F003BDD28 /* movieCount.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movieCount.json; sourceTree = "<group>"; };
 		5765F6E820F7F5910078ED6B /* MovieHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHelper.swift; sourceTree = "<group>"; };
 		5765F6EA20F8184C0078ED6B /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
 		5765F6EC20F9E9530078ED6B /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
@@ -125,23 +129,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		571E9DC020FA43CB003BDD28 /* BazaarTestAppAlamofireTests */ = {
-			isa = PBXGroup;
-			children = (
-				571E9DC920FA6CF9003BDD28 /* movie.json */,
-				571E9DC120FA43CB003BDD28 /* BazaarTestAppAlamofireTests.swift */,
-				571E9DC320FA43CB003BDD28 /* Info.plist */,
-			);
-			path = BazaarTestAppAlamofireTests;
-			sourceTree = "<group>";
-		};
 		5787006320F23E9300F4E5C3 = {
 			isa = PBXGroup;
 			children = (
 				5787009220F23F6000F4E5C3 /* Fonts */,
 				5787006E20F23E9300F4E5C3 /* BazaarTestApp */,
 				5787008620F23E9B00F4E5C3 /* BazaarTestAppTests */,
-				571E9DC020FA43CB003BDD28 /* BazaarTestAppAlamofireTests */,
 				5787006D20F23E9300F4E5C3 /* Products */,
 				D064439BAEF374E4A1241AE8 /* Pods */,
 				9C732E52E9BD7C621300C930 /* Frameworks */,
@@ -166,6 +159,8 @@
 				578700A220F5EDC900F4E5C3 /* Database */,
 				5787009D20F553A900F4E5C3 /* cell */,
 				5787006F20F23E9300F4E5C3 /* AppDelegate.swift */,
+				571E9DD220FA9C7F003BDD28 /* movieCount.json */,
+				571E9DCC20FA8A1E003BDD28 /* movie.json */,
 				5787007120F23E9300F4E5C3 /* MainViewController.swift */,
 				5787007320F23E9400F4E5C3 /* Main.storyboard */,
 				5787007920F23E9A00F4E5C3 /* Assets.xcassets */,
@@ -180,6 +175,7 @@
 		5787008620F23E9B00F4E5C3 /* BazaarTestAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				571E9DD020FA94DB003BDD28 /* testMovie.swift */,
 				5787008720F23E9B00F4E5C3 /* BazaarTestAppTests.swift */,
 				5787008920F23E9B00F4E5C3 /* Info.plist */,
 			);
@@ -365,7 +361,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				571E9DCB20FA6CFA003BDD28 /* movie.json in Resources */,
+				571E9DD520FA9C82003BDD28 /* movieCount.json in Resources */,
+				571E9DCF20FA8A1F003BDD28 /* movie.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +372,9 @@
 			files = (
 				5787009C20F23F8100F4E5C3 /* IRAN Sans.ttf in Resources */,
 				5787009920F23F8100F4E5C3 /* IRAN Sans Bold.ttf in Resources */,
+				571E9DCD20FA8A1F003BDD28 /* movie.json in Resources */,
 				5787007D20F23E9A00F4E5C3 /* LaunchScreen.storyboard in Resources */,
+				571E9DD320FA9C82003BDD28 /* movieCount.json in Resources */,
 				5787007A20F23E9A00F4E5C3 /* Assets.xcassets in Resources */,
 				5787009B20F23F8100F4E5C3 /* IRAN Sans Medium.ttf in Resources */,
 				5787007520F23E9400F4E5C3 /* Main.storyboard in Resources */,
@@ -388,7 +387,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				571E9DCA20FA6CFA003BDD28 /* movie.json in Resources */,
+				571E9DD420FA9C82003BDD28 /* movieCount.json in Resources */,
+				571E9DCE20FA8A1F003BDD28 /* movie.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +474,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				571E9DC220FA43CB003BDD28 /* BazaarTestAppAlamofireTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				571E9DD120FA94DB003BDD28 /* testMovie.swift in Sources */,
 				5787008820F23E9B00F4E5C3 /* BazaarTestAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

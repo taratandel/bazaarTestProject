@@ -55,7 +55,7 @@ class AppUtils: NSObject {
         lstParams["api_key"] = "2696829a81b1b5827d515ff121700838" as AnyObject
         return lstParams
     }
-    
+    /// This function get an ImageView and gives back a string which is the width of the image
     class func getTheWidthOfImageView(imageView : UIImageView) ->  String{
         let sizeOfImg = imageView.frame.size.width
         return "\(sizeOfImg)"

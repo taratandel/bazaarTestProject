@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension MainViewController : UITableViewDelegate, UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -30,6 +31,7 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
     }
 }
 extension MainViewController : UITextFieldDelegate{
+    
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
