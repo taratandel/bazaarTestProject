@@ -28,7 +28,7 @@ class CoreDataCalcs {
         
         //fetching Datas
         
-        let fechtRequest  = NSFetchRequest<NSManagedObject>(entityName: "Search")
+        let fechtRequest  = NSFetchRequest<NSManagedObject>(entityName: "SearchItems")
         
         //check if data exists or not
         do {
@@ -69,7 +69,7 @@ class CoreDataCalcs {
             appDelegate.persistentContainer.viewContext
         
         let entity =
-            NSEntityDescription.entity(forEntityName:"Search",
+            NSEntityDescription.entity(forEntityName:"SearchItems",
                                        in: managedContext)!
         
         let search = NSManagedObject(entity: entity,
@@ -100,7 +100,7 @@ class CoreDataCalcs {
             
             //fetching Datas
             
-            let fechtRequest  = NSFetchRequest<NSManagedObject>(entityName: "Search")
+            let fechtRequest  = NSFetchRequest<NSManagedObject>(entityName: "SearchItems")
             
             let predicate = NSPredicate(format: "title = %@", searches.title)
             
@@ -131,7 +131,7 @@ class CoreDataCalcs {
         
         //fetching Datas
         
-        let fechtRequest  = NSFetchRequest<NSManagedObject>(entityName: "Search")
+        let fechtRequest  = NSFetchRequest<NSManagedObject>(entityName: "SearchItems")
         
         //check if data exists or not
         do {
