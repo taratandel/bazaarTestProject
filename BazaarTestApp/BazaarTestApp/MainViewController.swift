@@ -44,6 +44,7 @@ class MainViewController: UIViewController, MovieDelegate {
             searchItem.title = self.movieName.text!
             activityIndic.isHidden = false
             activityIndic.startAnimating()
+            self.search.isEnabled = false
             movieHelper.getMovies(page: 1, query: query)
         }
         else {
@@ -65,6 +66,7 @@ class MainViewController: UIViewController, MovieDelegate {
     
     func getMovieSuccessfuly(lstMoviev: [Movie], pageNumber: Int) {
         activityIndic.stopAnimating()
+        self.search.isEnabled = true
         if lstMoviev.count > 0 {
             
        
@@ -83,6 +85,8 @@ class MainViewController: UIViewController, MovieDelegate {
     func failedToGetMovie(error: String) {
         ViewHelper.showToastMessage(message: error + "\n" + "try again")
         activityIndic.stopAnimating()
+        self.search.isEnabled = true
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -95,7 +99,7 @@ class MainViewController: UIViewController, MovieDelegate {
         }
     }
     @IBAction func startTyping(_ sender: Any) {
-        if movieName.text?.count == 0 {
+        if movieName.text?.count == 0 && databaseManager.getSearches().count > 0{
             suggestionView.isHidden = false
             self.seggestionTableView.reloadData()
         }
